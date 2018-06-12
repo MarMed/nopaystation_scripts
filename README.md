@@ -70,3 +70,15 @@ For example:
 ```bash
 $ ./download2torrent.sh PCSE00986 http://announce.url /path/to/directory/containing/the/tsv/files
 ```
+### autoregion.sh
+Requirements:
+* aria2c
+
+This script downloads every game, every update and dlc found for the specified region list with available zRIF key.
+It puts the DLC and the Updates in a dedicated folder named like the generated zip and creates a torrent for each game, updates and dlc folders.
+In fact it uses the four scripts from above combine them to share them easily via BitTorrent. You need to have download\_game.sh, download\_update.sh, download\_dlc.sh, download2torrent.sh in your $PATH variable to get it working. 
+Either you can symlink them to /home/$YOURUSER/bin/ or copy them to /usr/local/bin/.
+
+For example:
+```bash
+$ ./autoregion.sh REGION.list
