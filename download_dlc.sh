@@ -59,7 +59,7 @@ do
             mkdir "${MY_PATH}/${DESTDIR}_dlc"
         fi
         cd "${MY_PATH}/${DESTDIR}_dlc"
-        wget -O ${GAME_ID}_dlc.pkg -c "$LINK"
+        aria2c -o ${GAME_ID}_dlc.pkg -x 5 "$LINK"
         pkg2zip ${GAME_ID}_dlc.pkg "$KEY"
         rm ${GAME_ID}_dlc.pkg
         cd ${MY_PATH}

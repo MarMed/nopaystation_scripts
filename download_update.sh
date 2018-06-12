@@ -54,7 +54,7 @@ do
         mkdir "${MY_PATH}/${DESTDIR}_update"
     fi
     cd "${MY_PATH}/${DESTDIR}_update"
-    wget -O ${GAME_ID}_update.pkg -c "$LINK"
+    aria2c -o ${GAME_ID}_update.pkg -x 5 "$LINK"
     pkg2zip ${GAME_ID}_update.pkg
     rm ${GAME_ID}_update.pkg
     cd ${MY_PATH}
