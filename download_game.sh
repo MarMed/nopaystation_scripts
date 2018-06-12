@@ -47,7 +47,7 @@ then
     echo "zrif key missing. Cannot decrypt this package"
     exit 1
 else
-    aria2c -o ${GAME_ID}.pkg -x 5 "$LINK"
+    aria2c -U "" -o ${GAME_ID}.pkg -x 5 "$LINK"
     pkg2zip -l ${GAME_ID}.pkg > ${GAME_ID}.txt
     pkg2zip ${GAME_ID}.pkg "$KEY"
     rm ${GAME_ID}.pkg
